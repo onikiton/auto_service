@@ -1,0 +1,34 @@
+﻿<Window x:Class="auto_service.AddService"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:auto_service"
+        mc:Ignorable="d"
+        Title="Добавить услугу" Height="500" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="addTitle" HorizontalAlignment="Left" Margin="15,26,0,0" VerticalAlignment="Top" Width="349"/>
+        <TextBox x:Name="addDurationInSeconds" HorizontalAlignment="Left" Margin="180,72,0,0" VerticalAlignment="Top" Width="184"/>
+        <TextBox x:Name="addCost" HorizontalAlignment="Left" Margin="180,121,0,0" VerticalAlignment="Top" Width="184"/>
+        <TextBox x:Name="addDiscount" HorizontalAlignment="Left" Margin="180,170,0,0" VerticalAlignment="Top" Width="184"/>
+        <TextBox x:Name="addDescription" HorizontalAlignment="Center" Margin="0,287,0,0" VerticalAlignment="Top" TextWrapping="Wrap" Width="472" Height="129"/>
+        <TextBlock HorizontalAlignment="Left" Margin="383,27,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.011,0.602"><Run Text="Название"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="383,73,0,0" VerticalAlignment="Top"><Run Text="Длительность"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="383,122,0,0" VerticalAlignment="Top"><Run Text="Стоимость"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="383,171,0,0" VerticalAlignment="Top"><Run Text="Скидка"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="224,258,0,0" VerticalAlignment="Top"><Run Text="Описание"/></TextBlock>
+        <Button x:Name="btnaddImage" Content="Добавить рисунок" HorizontalAlignment="Left" Margin="22,228,0,0" VerticalAlignment="Top" Click="btnaddImage_Click"/>
+        <Button x:Name="btnSaveService" Grid.Row="1" Content="Сохранить" HorizontalAlignment="Center" Margin="10"  VerticalAlignment="Top" Click="btnSaveService_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="383,171,0,0" VerticalAlignment="Top"><Run Text="Скидка"/></TextBlock>
+        <Border BorderThickness ="1" BorderBrush="Black" HorizontalAlignment="Left" Margin="15,72,0,0" VerticalAlignment="Top" Width="140" Height="140">
+            <Image x:Name ="serviceImage"/>
+        </Border>
+        <Label Content="HH:MM" HorizontalAlignment="Left" Margin="180,46,0,0" VerticalAlignment="Top"/>
+        <Label Content="Руб." HorizontalAlignment="Left" Margin="180,95,0,0" VerticalAlignment="Top"/>
+        <Label Content="%" HorizontalAlignment="Left" Margin="180,144,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

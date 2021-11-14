@@ -1,0 +1,40 @@
+﻿<Window x:Class="auto_service.AddClientService"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:auto_service"
+        mc:Ignorable="d"
+        Title="Запись клиента на услугу" Height="330" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <DatePicker x:Name="addDate" HorizontalAlignment="Left" Margin="18,19,0,0" VerticalAlignment="Top" Width="290" Height="24" ></DatePicker>
+        <ComboBox x:Name="addClient" HorizontalAlignment="Left" Margin="18,153,0,0" VerticalAlignment="Top" Width="290" Height="24" SelectionChanged ="addClient_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding FirstName}" Margin ="0,0,5,0"/>
+                        <TextBlock Grid.Column="1" Text="{Binding LastName}" Margin ="0,0,5,0"/>
+                        <TextBlock Grid.Column="2" Text="{Binding Patronymic}"/>
+                    </Grid>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBox x:Name="addTime" HorizontalAlignment="Left" Margin="18,91,0,0"  VerticalAlignment="Top" Width="290" Height="24"/>
+        <ComboBox x:Name="addService" DisplayMemberPath="Title"  HorizontalAlignment="Left" Margin="18,226,0,0" VerticalAlignment="Top" Width="290" Height="24" SelectionChanged="addService_SelectionChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="327,22,0,0" VerticalAlignment="Top" Height="18"><Run Text="Дата"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="327,95,0,0" VerticalAlignment="Top" Height="16"><Run Text="Время"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="327,157,0,0" VerticalAlignment="Top" Height="16"><Run Text="Клиент"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="327,230,0,0" VerticalAlignment="Top" Height="16"><Run Text="Услуга"/></TextBlock>
+        <Button x:Name="btnSaveClientService" Content="Сохранить" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Top" Grid.Row="1" Click="btnSaveClientService_Click"/>
+        <Label Content="HH:MM" HorizontalAlignment="Left" Margin="18,60,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
